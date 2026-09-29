@@ -1,0 +1,35 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Synthetic case simulation</title>
+  <desc id="desc">Control beta distribution is pooled, shifted on the logit scale using delta beta, and sampled into synthetic cases.</desc>
+  <defs><marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f4c81"/></marker></defs>
+  <style>.panel{fill:#fff;stroke:#d9e3ea;stroke-width:2}.head{font:800 22px Segoe UI,Arial;fill:#0f4c81}.txt{font:700 15px Segoe UI,Arial;fill:#1f2933}.muted{font:700 13px Segoe UI,Arial;fill:#5d6978}.axis{stroke:#1f2933;stroke-width:2}.c{fill:none;stroke:#0f4c81;stroke-width:4}.k{fill:none;stroke:#f26b1d;stroke-width:4}.arrow{stroke:#0f4c81;stroke-width:4;fill:none;marker-end:url(#arrowBlue)}.dot{fill:#f26b1d;opacity:.65}</style>
+  <rect x="28" y="34" width="300" height="330" rx="14" class="panel"/>
+  <text x="54" y="72" class="head">Pool controls</text>
+  <text x="54" y="103" class="txt">For each CpG:</text>
+  <text x="54" y="130" class="muted">mean = alpha / (alpha + beta)</text>
+  <text x="54" y="151" class="muted">phi = alpha + beta</text>
+  <text x="54" y="177" class="muted">random-effects mean, weighted log(phi)</text>
+  <line x1="68" y1="306" x2="284" y2="306" class="axis"/>
+  <path d="M70 304 C105 300 122 220 155 178 C186 138 226 150 252 212 C272 260 286 294 310 304" class="c"/>
+
+  <path d="M338 200 L416 200" class="arrow"/>
+  <rect x="430" y="34" width="300" height="330" rx="14" class="panel"/>
+  <text x="456" y="72" class="head">Apply delta beta</text>
+  <text x="456" y="104" class="txt">Target CpGs</text>
+  <text x="456" y="130" class="muted">runif(0.75, 1) * reported delta</text>
+  <text x="456" y="164" class="txt">Other CpGs</text>
+  <text x="456" y="190" class="muted">small background effect around 0</text>
+  <rect x="456" y="230" width="230" height="72" rx="10" fill="#fff8f3" stroke="#f5c4a5"/>
+  <text x="474" y="258" class="txt">Shift on logit scale</text>
+  <text x="474" y="282" class="muted">keeps beta values inside [0, 1]</text>
+
+  <path d="M740 200 L818 200" class="arrow"/>
+  <rect x="832" y="34" width="240" height="330" rx="14" class="panel"/>
+  <text x="858" y="72" class="head">Sample cases</text>
+  <text x="858" y="103" class="muted">25 distributions x 6 cases</text>
+  <text x="858" y="124" class="muted">per episignature in v5</text>
+  <line x1="868" y1="306" x2="1038" y2="306" class="axis"/>
+  <path d="M870 304 C898 298 912 232 944 178 C974 126 1018 148 1038 222 C1050 260 1058 292 1070 304" class="k"/>
+  <circle cx="918" cy="272" r="5" class="dot"/><circle cx="955" cy="204" r="5" class="dot"/><circle cx="985" cy="164" r="5" class="dot"/><circle cx="1016" cy="236" r="5" class="dot"/><circle cx="936" cy="230" r="5" class="dot"/>
+  <text x="858" y="340" class="muted">Output: SummarizedExperiment(Beta)</text>
+</svg>

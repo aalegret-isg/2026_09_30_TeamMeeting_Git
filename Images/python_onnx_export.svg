@@ -1,0 +1,37 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Python and ONNX conversion</title>
+  <desc id="desc">R caret models are exported as CSV training data and parameters, rebuilt as sklearn pipelines, then converted to ONNX.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f4c81"/></marker></defs>
+  <style>.box{fill:#fff;stroke:#d9e3ea;stroke-width:2}.head{font:800 22px Segoe UI,Arial;fill:#0f4c81}.txt{font:700 15px Segoe UI,Arial;fill:#1f2933}.muted{font:700 13px Segoe UI,Arial;fill:#5d6978}.arrow{stroke:#0f4c81;stroke-width:4;fill:none;marker-end:url(#arrow)}.chip{fill:#edf4f8;stroke:#cfe1ec}.orange{fill:#fff1e8;stroke:#f5c4a5}</style>
+  <rect x="28" y="58" width="230" height="270" rx="14" class="box"/>
+  <text x="54" y="94" class="head">R caret SVM</text>
+  <text x="54" y="126" class="muted">SVM_linear_*_PARTIAL.RData</text>
+  <text x="54" y="166" class="txt">trainingData</text>
+  <text x="54" y="190" class="txt">preProcess mean/sd</text>
+  <text x="54" y="214" class="txt">bestTune cost</text>
+  <rect x="54" y="260" width="150" height="30" rx="15" class="orange"/><text x="73" y="280" class="muted">pythonConversion.R</text>
+
+  <path d="M268 194 L340 194" class="arrow"/>
+  <rect x="354" y="58" width="230" height="270" rx="14" class="box"/>
+  <text x="380" y="94" class="head">CSV handoff</text>
+  <text x="380" y="134" class="txt">X_*.csv</text>
+  <text x="380" y="160" class="txt">y_*.csv</text>
+  <text x="380" y="186" class="txt">scale_params_*.csv</text>
+  <text x="380" y="226" class="muted">disease and article ids checked</text>
+
+  <path d="M594 194 L666 194" class="arrow"/>
+  <rect x="680" y="58" width="230" height="270" rx="14" class="box"/>
+  <text x="706" y="94" class="head">sklearn pipeline</text>
+  <text x="706" y="132" class="txt">StandardScaler</text>
+  <text x="706" y="158" class="txt">SVC(kernel='linear')</text>
+  <text x="706" y="184" class="txt">probability=True</text>
+  <rect x="706" y="230" width="164" height="30" rx="15" class="chip"/><text x="724" y="250" class="muted">SVM_python_sbatch.py</text>
+
+  <path d="M920 194 L992 194" class="arrow"/>
+  <rect x="1004" y="58" width="80" height="270" rx="14" class="box"/>
+  <text x="1025" y="130" class="head">ONNX</text>
+  <text x="1020" y="168" class="muted">opset 12</text>
+  <text x="1020" y="198" class="muted">input:</text>
+  <text x="1020" y="220" class="muted">[n, p]</text>
+  <text x="1020" y="270" class="muted">app/API</text>
+</svg>

@@ -1,0 +1,36 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 430" role="img" aria-labelledby="title desc">
+  <title id="title">Model training workflow</title>
+  <desc id="desc">Synthetic case profiles and controls are bound together, partitioned, trained with caret, and scored on validation samples.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f4c81"/></marker></defs>
+  <style>.box{fill:#fff;stroke:#d9e3ea;stroke-width:2}.head{font:800 22px Segoe UI,Arial;fill:#0f4c81}.txt{font:700 15px Segoe UI,Arial;fill:#1f2933}.muted{font:700 13px Segoe UI,Arial;fill:#5d6978}.arrow{stroke:#0f4c81;stroke-width:4;fill:none;marker-end:url(#arrow)}.cell{stroke:#fff;stroke-width:1}.blue{fill:#cfe1ec}.orange{fill:#f6b383}.green{fill:#bddaa8}.mag{fill:#f5aad4}</style>
+  <rect x="34" y="46" width="250" height="310" rx="14" class="box"/>
+  <text x="60" y="82" class="head">Joint matrix</text>
+  <text x="60" y="112" class="muted">controls + all synthetic profiles</text>
+  <g transform="translate(64,142)">
+    <rect width="176" height="142" fill="#f8fafc" stroke="#d9e3ea"/>
+    <g><rect x="0" y="0" width="28" height="20" class="cell blue"/><rect x="30" y="0" width="28" height="20" class="cell blue"/><rect x="60" y="0" width="28" height="20" class="cell orange"/><rect x="90" y="0" width="28" height="20" class="cell orange"/><rect x="120" y="0" width="28" height="20" class="cell green"/><rect x="150" y="0" width="28" height="20" class="cell mag"/></g>
+    <g transform="translate(0,24)"><rect x="0" width="28" height="20" class="cell blue"/><rect x="30" width="28" height="20" class="cell blue"/><rect x="60" width="28" height="20" class="cell orange"/><rect x="90" width="28" height="20" class="cell orange"/><rect x="120" width="28" height="20" class="cell green"/><rect x="150" width="28" height="20" class="cell mag"/></g>
+    <g transform="translate(0,48)"><rect x="0" width="28" height="20" class="cell blue"/><rect x="30" width="28" height="20" class="cell blue"/><rect x="60" width="28" height="20" class="cell orange"/><rect x="90" width="28" height="20" class="cell orange"/><rect x="120" width="28" height="20" class="cell green"/><rect x="150" width="28" height="20" class="cell mag"/></g>
+    <g transform="translate(0,72)"><rect x="0" width="28" height="20" class="cell blue"/><rect x="30" width="28" height="20" class="cell blue"/><rect x="60" width="28" height="20" class="cell orange"/><rect x="90" width="28" height="20" class="cell orange"/><rect x="120" width="28" height="20" class="cell green"/><rect x="150" width="28" height="20" class="cell mag"/></g>
+    <g transform="translate(0,96)"><rect x="0" width="28" height="20" class="cell blue"/><rect x="30" width="28" height="20" class="cell blue"/><rect x="60" width="28" height="20" class="cell orange"/><rect x="90" width="28" height="20" class="cell orange"/><rect x="120" width="28" height="20" class="cell green"/><rect x="150" width="28" height="20" class="cell mag"/></g>
+  </g>
+
+  <path d="M294 202 L368 202" class="arrow"/>
+  <rect x="382" y="46" width="270" height="310" rx="14" class="box"/>
+  <text x="408" y="82" class="head">Binary model</text>
+  <text x="408" y="113" class="txt">One disease vs the rest</text>
+  <text x="408" y="143" class="muted">Case = target synthetic disease</text>
+  <text x="408" y="164" class="muted">Control = real controls + other synthetic diseases</text>
+  <rect x="408" y="205" width="196" height="34" rx="17" fill="#edf4f8" stroke="#cfe1ec"/><text x="428" y="227" class="txt">SVM_linear in v5 script</text>
+  <text x="408" y="278" class="muted">caret repeated CV, class weights, final fit</text>
+
+  <path d="M662 202 L736 202" class="arrow"/>
+  <rect x="750" y="46" width="330" height="310" rx="14" class="box"/>
+  <text x="776" y="82" class="head">Multiclass model</text>
+  <text x="776" y="113" class="txt">Control plus all diseases</text>
+  <text x="776" y="143" class="muted">safe labels with class_map</text>
+  <text x="776" y="164" class="muted">class/sample weights for imbalance</text>
+  <text x="776" y="206" class="txt">Validation scores</text>
+  <text x="776" y="236" class="muted">probability by disease, ROC/AUC if cases exist</text>
+  <text x="776" y="278" class="muted">Outputs: saved caret models + figures</text>
+</svg>

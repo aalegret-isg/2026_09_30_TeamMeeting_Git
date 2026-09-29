@@ -1,0 +1,32 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Imprinted region workflow</title>
+  <desc id="desc">Imprinted DMR regions are mapped to CpGs, simulated, summarized as region distributions, and tested in real cases.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f4c81"/></marker></defs>
+  <style>.box{fill:#fff;stroke:#d9e3ea;stroke-width:2}.head{font:800 22px Segoe UI,Arial;fill:#0f4c81}.txt{font:700 15px Segoe UI,Arial;fill:#1f2933}.muted{font:700 13px Segoe UI,Arial;fill:#5d6978}.arrow{stroke:#0f4c81;stroke-width:4;fill:none;marker-end:url(#arrow)}.region{fill:#ecf8e7;stroke:#62bb1f;stroke-width:3}.probe{fill:#f26b1d}.line{stroke:#1f2933;stroke-width:5}</style>
+  <rect x="28" y="48" width="310" height="300" rx="14" class="box"/>
+  <text x="54" y="84" class="head">1. Regions</text>
+  <text x="54" y="116" class="txt">IMP_Regions_PMID27632690.xlsx</text>
+  <line x1="70" y1="188" x2="292" y2="188" class="line"/>
+  <rect x="118" y="158" width="128" height="60" rx="8" class="region"/>
+  <circle cx="96" cy="188" r="7" class="probe"/><circle cx="136" cy="188" r="7" class="probe"/><circle cx="176" cy="188" r="7" class="probe"/><circle cx="222" cy="188" r="7" class="probe"/><circle cx="270" cy="188" r="7" class="probe"/>
+  <text x="104" y="247" class="muted">subsetByOverlaps(array_annots)</text>
+
+  <path d="M350 198 L420 198" class="arrow"/>
+  <rect x="434" y="48" width="270" height="300" rx="14" class="box"/>
+  <text x="460" y="84" class="head">2. CpG model input</text>
+  <text x="460" y="116" class="muted">Write epis_list_CpG_PMID27632690.xlsx</text>
+  <text x="460" y="154" class="txt">Simulate BWS / TS14 etc.</text>
+  <text x="460" y="184" class="muted">same delta beta idea, but seeded by DMRs</text>
+  <text x="460" y="232" class="txt">Train SVM</text>
+  <text x="460" y="260" class="muted">plus PCA, hclust and region plots</text>
+
+  <path d="M716 198 L786 198" class="arrow"/>
+  <rect x="800" y="48" width="270" height="300" rx="14" class="box"/>
+  <text x="826" y="84" class="head">3. Region score</text>
+  <text x="826" y="116" class="txt">GuidesDMRanalysis.xlsx</text>
+  <text x="826" y="148" class="muted">mean beta per PID and DMR</text>
+  <text x="826" y="170" class="muted">reference mean, sd, MAD</text>
+  <rect x="826" y="210" width="206" height="62" rx="10" fill="#fff8f3" stroke="#f5c4a5"/>
+  <text x="844" y="235" class="txt">z = (test - ref) / (3 * sd)</text>
+  <text x="844" y="258" class="muted">Bonferroni-adjusted region p-values</text>
+</svg>

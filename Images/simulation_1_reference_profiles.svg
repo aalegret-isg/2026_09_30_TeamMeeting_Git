@@ -1,0 +1,117 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 760" role="img" aria-labelledby="title desc">
+  <title id="title">Simulation 1 Reference Profiles</title>
+  <desc id="desc">Wide schematic showing reference methylation profiles pooled into CpG-wise beta distributions, used to simulate cases and detect hypermethylated or hypomethylated outlier CpGs.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f4c81"/>
+    </marker>
+    <linearGradient id="betaScale" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#00a3a6"/>
+      <stop offset="0.5" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#f26b1d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#0f4c81" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <style>
+    .bg { fill: #ffffff; }
+    .frame { fill: #f8fafc; stroke: #d9e3ea; stroke-width: 2.5; }
+    .card { fill: #ffffff; stroke: #d9e3ea; stroke-width: 2.5; filter: url(#shadow); }
+    .kicker { font: 850 23px 'Segoe UI', Arial, sans-serif; fill: #f26b1d; letter-spacing: .08em; }
+    .title { font: 850 54px 'Segoe UI', Arial, sans-serif; fill: #0f4c81; letter-spacing: .04em; }
+    .subtitle { font: 800 25px 'Segoe UI', Arial, sans-serif; fill: #1f2933; }
+    .head { font: 850 31px 'Segoe UI', Arial, sans-serif; fill: #08385f; }
+    .tag { font: 850 17px 'Segoe UI', Arial, sans-serif; fill: #5d6978; }
+    .tiny { font: 800 15px 'Segoe UI', Arial, sans-serif; fill: #5d6978; }
+    .arrow { stroke: #0f4c81; stroke-width: 7; fill: none; marker-end: url(#arrow); }
+    .axis { stroke: #1f2933; stroke-width: 3; }
+    .grid { stroke: #d9e3ea; stroke-width: 1.8; }
+    .curveA { fill: none; stroke: #0f4c81; stroke-width: 6; stroke-linecap: round; }
+    .curveB { fill: none; stroke: #f26b1d; stroke-width: 6; stroke-linecap: round; }
+    .curveC { fill: none; stroke: #00a3a6; stroke-width: 6; stroke-linecap: round; }
+    .orange { fill: #f26b1d; }
+    .teal { fill: #00a3a6; }
+    .grey { fill: #8aa0b3; }
+  </style>
+
+  <rect width="1900" height="760" class="bg"/>
+  <rect x="34" y="34" width="1832" height="692" rx="28" class="frame"/>
+
+  <text x="82" y="89" class="kicker">SIMULATION 1</text>
+  <text x="82" y="148" class="title">REFERENCE PROFILES</text>
+  <text x="82" y="190" class="subtitle">Reference profiles -> CpG-wise beta distributions -> simulated cases -> outlier CpGs</text>
+
+  <!-- Card 1 -->
+  <rect x="84" y="245" width="365" height="360" rx="20" class="card"/>
+  <text x="120" y="298" class="head">1. Profiles</text>
+  <g transform="translate(118,330)">
+    <rect x="0" y="0" width="255" height="205" rx="12" fill="#ffffff" stroke="#d9e3ea" stroke-width="2"/>
+    <rect x="22" y="22" width="35" height="26" fill="#eaf3f8"/><rect x="63" y="22" width="35" height="26" fill="#b8e0e1"/><rect x="104" y="22" width="35" height="26" fill="#fff1e8"/><rect x="145" y="22" width="35" height="26" fill="#f6b383"/><rect x="186" y="22" width="35" height="26" fill="#f26b1d"/>
+    <rect x="22" y="56" width="35" height="26" fill="#f8fafc"/><rect x="63" y="56" width="35" height="26" fill="#eaf3f8"/><rect x="104" y="56" width="35" height="26" fill="#b8e0e1"/><rect x="145" y="56" width="35" height="26" fill="#fff1e8"/><rect x="186" y="56" width="35" height="26" fill="#f6b383"/>
+    <rect x="22" y="90" width="35" height="26" fill="#00a3a6"/><rect x="63" y="90" width="35" height="26" fill="#b8e0e1"/><rect x="104" y="90" width="35" height="26" fill="#eaf3f8"/><rect x="145" y="90" width="35" height="26" fill="#fff1e8"/><rect x="186" y="90" width="35" height="26" fill="#f6b383"/>
+    <rect x="22" y="124" width="35" height="26" fill="#b8e0e1"/><rect x="63" y="124" width="35" height="26" fill="#eaf3f8"/><rect x="104" y="124" width="35" height="26" fill="#fff1e8"/><rect x="145" y="124" width="35" height="26" fill="#f6b383"/><rect x="186" y="124" width="35" height="26" fill="#f26b1d"/>
+    <rect x="22" y="158" width="35" height="26" fill="#eaf3f8"/><rect x="63" y="158" width="35" height="26" fill="#b8e0e1"/><rect x="104" y="158" width="35" height="26" fill="#fff1e8"/><rect x="145" y="158" width="35" height="26" fill="#fff1e8"/><rect x="186" y="158" width="35" height="26" fill="#f6b383"/>
+  </g>
+  <rect x="120" y="562" width="250" height="24" rx="12" fill="url(#betaScale)"/>
+  <text x="120" y="625" class="tag">observed beta values</text>
+
+  <path d="M 478 425 L 565 425" class="arrow"/>
+
+  <!-- Card 2 -->
+  <rect x="600" y="245" width="365" height="360" rx="20" class="card"/>
+  <text x="636" y="298" class="head">2. Pool CpGs</text>
+  <g transform="translate(660,330)">
+    <line x1="0" y1="190" x2="235" y2="190" class="axis"/>
+    <line x1="0" y1="190" x2="0" y2="18" class="axis"/>
+    <line x1="0" y1="136" x2="235" y2="136" class="grid"/>
+    <line x1="0" y1="82" x2="235" y2="82" class="grid"/>
+    <path d="M 6 188 C 35 178 55 115 90 72 C 126 28 175 51 204 112 C 222 151 232 178 236 188" class="curveA"/>
+    <path d="M 6 188 C 38 186 64 160 92 124 C 124 82 172 82 204 122 C 224 151 235 178 238 188" class="curveB" opacity="0.88"/>
+    <path d="M 6 188 C 28 130 43 54 78 36 C 111 18 144 63 164 116 C 187 168 215 185 236 188" class="curveC" opacity="0.88"/>
+  </g>
+  <text x="638" y="562" class="tag">one beta distribution per CpG</text>
+  <text x="638" y="625" class="tiny">mean + variance -> alpha + beta</text>
+
+  <path d="M 994 425 L 1081 425" class="arrow"/>
+
+  <!-- Card 3 -->
+  <rect x="1116" y="245" width="310" height="360" rx="20" class="card"/>
+  <text x="1152" y="298" class="head">3. Simulate</text>
+  <g transform="translate(1168,330)">
+    <rect x="0" y="0" width="182" height="205" rx="12" fill="#ffffff" stroke="#d9e3ea" stroke-width="2"/>
+    <rect x="22" y="22" width="27" height="27" fill="#eaf3f8"/><rect x="58" y="22" width="27" height="27" fill="#fff1e8"/><rect x="94" y="22" width="27" height="27" fill="#f6b383"/><rect x="130" y="22" width="27" height="27" fill="#f26b1d"/>
+    <rect x="22" y="58" width="27" height="27" fill="#00a3a6"/><rect x="58" y="58" width="27" height="27" fill="#b8e0e1"/><rect x="94" y="58" width="27" height="27" fill="#fff1e8"/><rect x="130" y="58" width="27" height="27" fill="#f26b1d"/>
+    <rect x="22" y="94" width="27" height="27" fill="#eaf3f8"/><rect x="58" y="94" width="27" height="27" fill="#b8e0e1"/><rect x="94" y="94" width="27" height="27" fill="#fff1e8"/><rect x="130" y="94" width="27" height="27" fill="#f26b1d"/>
+    <rect x="22" y="130" width="27" height="27" fill="#00a3a6"/><rect x="58" y="130" width="27" height="27" fill="#eaf3f8"/><rect x="94" y="130" width="27" height="27" fill="#f6b383"/><rect x="130" y="130" width="27" height="27" fill="#f26b1d"/>
+    <rect x="22" y="166" width="27" height="27" fill="#b8e0e1"/><rect x="58" y="166" width="27" height="27" fill="#fff1e8"/><rect x="94" y="166" width="27" height="27" fill="#fff1e8"/><rect x="130" y="166" width="27" height="27" fill="#f6b383"/>
+  </g>
+  <text x="1152" y="562" class="tag">more reference-like cases</text>
+  <text x="1152" y="625" class="tiny">sampled CpG by CpG</text>
+
+  <path d="M 1455 425 L 1542 425" class="arrow"/>
+
+  <!-- Card 4 -->
+  <rect x="1575" y="245" width="250" height="360" rx="20" class="card"/>
+  <text x="1611" y="298" class="head">4. Outliers</text>
+  <g transform="translate(1613,365)">
+    <line x1="0" y1="190" x2="160" y2="190" class="axis"/>
+    <line x1="0" y1="190" x2="0" y2="40" class="axis"/>
+    <line x1="0" y1="88" x2="160" y2="88" stroke="#f26b1d" stroke-width="4" stroke-dasharray="9 9"/>
+    <line x1="0" y1="160" x2="160" y2="160" stroke="#00a3a6" stroke-width="4" stroke-dasharray="9 9"/>
+    <circle cx="26" cy="142" r="8" class="grey" opacity="0.72"/>
+    <circle cx="48" cy="130" r="8" class="grey" opacity="0.72"/>
+    <circle cx="70" cy="150" r="8" class="grey" opacity="0.72"/>
+    <circle cx="92" cy="134" r="8" class="grey" opacity="0.72"/>
+    <circle cx="118" cy="58" r="13" class="orange"/>
+    <circle cx="40" cy="174" r="13" class="teal"/>
+  </g>
+  <circle cx="1616" cy="326" r="9" class="orange"/><text x="1634" y="332" class="tiny">hypermethylated</text>
+  <circle cx="1616" cy="350" r="9" class="teal"/><text x="1634" y="356" class="tiny">hypomethylated</text>
+
+  <!-- Bottom compact idea -->
+  <rect x="84" y="655" width="1741" height="48" rx="14" fill="#fff8f3" stroke="#f5c4a5" stroke-width="2"/>
+  <text x="120" y="687" class="subtitle">Goal: detect statistical methylation outliers.</text>
+</svg>
+
+
