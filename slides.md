@@ -486,11 +486,18 @@ transition: fade
 </div>
 
 <!-- Click 1: XRa -->
-<div v-click="4">
+<div v-click="[4,5]">
   <img
     src="./Images/Sotos_Phenos_LogRegress2.png" class="absolute"
     style="text-align: center; width: 650px; top: 10%; left: 50%; transform: translateX(-50%);"
   />
+</div>
+
+<div v-click="5">
+
+  <img src="./Images/FINALpubl_SotosSex.png" class="absolute wide-figure"
+    style="text-align: center; width: 80%; top: 25%; left: 50%; transform: translateX(-50%);">
+
 </div>
 
 
